@@ -56,14 +56,27 @@ def check_entity_iris(model):
             passed = False
     return passed
 
-def check_entity_iris(model):
-    """Does each entity have an iri?  Is it valid?"""
+def check_entity_properties(model,required_properties):
+    """Does each entity have each required property"""
     passed = True
     for key,entity in model.items():
-        if 'iri' not in entity:
-            print('Entity lacks an iri key: {}'.format(key))
-            passed = False
+        for rprop in required_properties:
+            if rprop not in entity:
+                print('Entity {} lacks property {}'.format(key,rprop))
+                passed = False
     return passed
+
+def check_attribute_properties(model,required_properties):
+    """Does each attribute have each required property"""
+    passed = True
+    for key,entity in model.items():
+        for attribute in entity['attributes']:
+            for rprop in required_properties:
+                if rprop not in attribute:
+                    print('attribute {} lacks property {}'.format(attribute['id'],rprop))
+                    passed = False
+    return passed
+
 
 def check_empty_entity_values(model):
     """Does every property of every entity have a non-empty value?"""
@@ -94,7 +107,31 @@ def check_empty_attribute_values(model):
                         passed = False
     return passed
 
-def go(model_filename):
+def check_attribute_entityId(model):
+    """Does attribute.entityId == the ID of the encolsing entity?"""
+    passed = True
+    for key,entity in model.items():
+        for attribute in entity['attributes']:
+            if not entity['id'] == attribute['entityId']:
+                print( "entityID for attribute {} does not match enclosing attribute id".format(attribute['id']))
+                passed = False
+    return passed
+
+def check_valueSets(model):
+    passed = True
+    for key,entity in model.items():
+        for attribute in entity['attributes']:
+            if not attribute['dataType'] == '@id':
+                continue
+            if not "@valueSetId" in attribute:
+                print("Attribute {} has type @id, but does not have a valueSetId".format(attribute['id']))
+                passed = False
+            elif attribute['@valueSetId'].startswith('DSIVS'):
+                print("Attribute {} has a placeholder valueset ID".format(attribute['id']))
+                passed = False
+    return passed
+
+def test_model(model_filename):
     """Read in the model json and run it through some checks to generate
     a punchlist of work to be done"""
     #It's possible that this would be best implemented as a pytest module,
@@ -113,11 +150,12 @@ def go(model_filename):
     passed = passed & check_do_attributes_have_ids(model)
     passed = passed & check_unique_attribute_ids(model)
     passed = passed & check_entity_ids_match_keys(model)
-    passed = passed & check_entity_iris(model)
+    passed = passed & check_entity_properties(model,['iri','iri-label','comments','description','name'])
+    passed = passed & check_attribute_properties(model,['iri','iri-label','comments','description','name','entityId','cardinality','cg-label','dataType'])
     passed = passed & check_empty_entity_values(model)
     passed = passed & check_empty_attribute_values(model)
-    #passed = passed & check_attribute_entityId(model)
-    #passed = passed & check_valueSets(model)
+    passed = passed & check_attribute_entityId(model)
+    passed = passed & check_valueSets(model)
     #passed = passed & check_iri_labels(model)
 
     if passed:
@@ -125,4 +163,4 @@ def go(model_filename):
 
 
 if __name__ == '__main__':
-    go('model.json')
+    test_model('model.json')
