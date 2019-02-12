@@ -1,0 +1,97 @@
+{
+  "@context" : {
+    "id" : "@id",
+    "type" : "@type",
+    "SEPIO" : "http://purl.obolibrary.org/obo/SEPIO_",
+    "PMID" : "https://www.ncbi.nlm.nih.gov/pubmed/",
+    "BFO" : "http://purl.obolibrary.org/obo/BFO_",
+    "CG" : "http://dataexchange.clinicalgenome.org/terms/",
+    "DC" : "http://purl.org/dc/elements/1.1/",
+    "OMIM" : "http://identifiers.org/omim/",
+    "MONDO" : "http://purl.obolibrary.org/obo/MONDO_",
+    "FALDO" : "http://biohackathon.org/resource/faldo#",
+    "NCBI_NU" : "https://www.ncbi.nlm.nih.gov/nuccore/",
+    "RDFS" : "http://www.w3.org/2000/01/rdf-schema#",
+    "has_evidence_with_item" : {
+      "@id" : "SEPIO:0000189",
+      "@type" : "@id"
+    },
+    "has_predicate" : {
+      "@id" : "SEPIO:0000389",
+      "@type" : "@id"
+    },
+    "has_subject" : {
+      "@id" : "SEPIO:0000388",
+      "@type" : "@id"
+    },
+    "has_object" : {
+      "@id" : "SEPIO:0000390",
+      "@type" : "@id"
+    },
+    "qualified_contribution" : {
+      "@id" : "SEPIO:0000159",
+      "@type" : "@id"
+    },
+    "reference" : {
+      "@id" : "FALDO:reference",
+      "@type" : "@id"
+    },
+    "realizes" : {
+      "@id" : "BFO:0000055",
+      "@type" : "@id"
+    },
+    "source" : {
+      "@id" : "IAO:0000115",
+      "@type" : "@id"
+    },
+    "is_feature_affected_by" : {
+      "@id" : "GENO:0000445",
+      "@type" : "@id"
+    },
+    "label" : "RDFS:label",
+    "activity_date" : "SEPIO:0000160",
+    "has_count" : "GENO:0000917",
+    "start_position" : "GENO:0000894",
+    "end_position" : "GENO:0000895",
+    "description" : "DC:description"
+  },
+  "id" : "https://search.clinicalgenome.org/entities/ISCA-37393x3-2014-02-27T20:36:57Z",
+  "qualified_contribution" : {
+    "activity_date" : "2014-02-27T20:36:57Z",
+    "realizes" : "SEPIO:0000331"
+  },
+  "has_subject" : {
+    "id" : "https://search.clinicalgenome.org/entities/ISCA-37393x3",
+    "has_subject" : {
+      "is_feature_affected_by" : {
+        "type" : "GENO:0000902",
+        "label" : "22q11.21 recurrent (Cat eye syndrome) region (includes CECR2)",
+        "reference" : "NCBI_NU:NC_000022.10",
+        "start_position" : "17392953",
+        "end_position" : "18591860"
+      },
+      "type" : "GENO:0000923",
+      "has_count" : 3
+    },
+    "has_predicate" : "GENO:0000840",
+    "type" : "SEPIO:0002003",
+    "has_object" : "OMIM:115470"
+  },
+  "has_predicate" : "SEPIO:0000146",
+  "type" : "SEPIO:0002001",
+  "has_evidence_with_item" : [ {
+    "type" : "SEPIO:0000173",
+    "source" : "PMID:22890013",
+    "description" : "Belangero et al.(2012) reported four unrelated patients and three patients from the same family with supernumerary marker chromosomes 22 that were further characterized as type I rearrangements."
+  }, {
+    "type" : "SEPIO:0000173",
+    "source" : "PMID:22495764",
+    "description" : "Kvarnung et al. (2012) reported four family members, a father and all his three children, with mosaicism for a supernumerary marker chromosome 22 that was further characterized as a CES type I rearrangement. Family members showed variable clinical findings, ranging from no obvious symptoms to classical cat eye syndrome. There was a direct correlation between the degree of mosaicism, as characterized by interphase FISH, and the degree of affectedness, particularly by examination of buccal mucosa."
+  }, {
+    "type" : "SEPIO:0000173",
+    "source" : "PMID:11693792",
+    "description" : "Rosias et al. 2001 provided a review of 105 patients showing CES clinical features derived from tetrasomy of the CES critical region and compare to their patient with a SMC. Clinical phenotype varied widely, ranging from normal to severely affected with ear tags and pits being the most common feature. \r\n"
+  } ],
+  "has_object" : "SEPIO:0002006",
+  "description" : "Cat eye syndrome (CES) results from tetrasomy/triplication (four copies) of the proximal region of chromosome 22q. Structurally, this gain presents in the form of a supernumerary marker chromosome (SMC) that is characterized cytogenetically as an inv dup(22)(pter-q11.2). Type I CES SMCs are symmetrical and contain two copies of the 22q11.1-q11.21 region, known as the CES critical region (CESCR). This region contains 22 genes, of which the genes CECR1 and CECR2 are considered to be candidates for heart/facial and neurologic/eye features, respectively. Type I SMCs result from rearrangements involving the most proximal low copy repeat (LCR-A) on chromosome 22 and do not involve the DiGeorge/Velocardiofacial syndrome region of 22q11.2. Phenotypic variability is in CES is common and may be attributed to variation in levels of mosaicism across different tissues.\r\n\r\nNote that genes used as landmarks are not necessarily causative of the complete phenotype(s) associated with the region."
+}

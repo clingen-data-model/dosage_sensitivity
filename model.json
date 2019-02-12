@@ -1,0 +1,332 @@
+{
+    "E00": {
+        "id":   "E00",
+        "name": "EvidenceStrengthAssertion",
+        "iri":  "SEPIO:0002001",
+        "comments": "",
+        "attributes": [
+            {
+                "id": "A00",
+                "entityId": "E00",
+                "name": "subject",
+                "dataType": "DosageSensitivityProposition",
+                "cardinality": "1..1",
+                "iri": "SEPIO:0000388",
+                "iri-label": "has_subject",
+                "cg-label":  "subject",
+                "description": ""
+            },
+            {
+                "id": "A01",
+                "entityId": "E01",
+                "name": "predicate",
+                "dataType": "@id",
+                "cardinality": "1..1",
+                "iri": "SEPIO:0000389",
+                "iri-label": "has_predicate",
+                "cg-label":  "predicate",
+                "@valueSetId": "DSIVS:0000001",
+                "description": ""
+            },
+            {
+                "id": "A02",
+                "entityId": "E01",
+                "name": "object",
+                "dataType": "@id",
+                "cardinality": "1..1",
+                "iri": "SEPIO:0000390",
+                "iri-label": "has_object",
+                "cg-label":  "object",
+                "@valueSetId": "DSIVS:0000002",
+                "description": ""
+            },
+            {
+                "id": "A03",
+                "entityId": "E00",
+                "name": "qualifiedContribution",
+                "dataType": "Contribution",
+                "cardinality": "0..*",
+                "iri": "SEPIO:0000388",
+                "iri-label": "has_subject",
+                "cg-label":  "subject",
+                "description": ""
+            },
+            {
+                "id": "A04",
+                "entityId": "E00",
+                "name": "assertionHasEvidenceItem",
+                "dataType": "StudyFinding",
+                "cardinality": "0..*",
+                "iri": "SEPIO:0000189",
+                "iri-label": "has_evidence_with_item",
+                "cg-label":  "assertionHasEvidenceItem",
+                "description": ""
+            },
+            {
+                "id": "A20",
+                "entityId": "E00",
+                "name": "isSpecifiedBy",
+                "dataType": "DosageSensitivityEvaluationGuideline",
+                "cardinality": "1..1",
+                "iri": "",
+                "iri-label": "",
+                "cg-label":  "isSpecifiedBy",
+                "description": ""
+            }
+        ]
+    },
+    "E01": {
+        "id":   "E01",
+        "name": "DosageSensitivityProposition",
+        "iri":  "SEPIO:0002003",
+        "comments": "",
+        "attributes": [
+            {
+                "id": "A05",
+                "entityId": "E01",
+                "name": "subject",
+                "dataType": "GeneticDosage",
+                "cardinality": "1..1",
+                "iri": "",
+                "iri-label": "",
+                "cg-label":  "subject",
+                "description": ""
+            },
+            {
+                "id": "A06",
+                "entityId": "E01",
+                "name": "predicate",
+                "dataType": "@id",
+                "cardinality": "1..1",
+                "iri": "",
+                "iri-label": "",
+                "cg-label":  "predicate",
+                "@valueSetId": "DSIVS:0000003",
+                "description": ""
+            },
+            {
+                "id": "A07",
+                "entityId": "E01",
+                "name": "object",
+                "dataType": "GeneticCondition",
+                "cardinality": "1..1",
+                "iri": "",
+                "iri-label": "",
+                "cg-label":  "object",
+                "description": ""
+            }
+        ]
+    },
+    "E02": {
+        "id":   "E02",
+        "name": "SequenceLocation",
+        "iri":  "",
+        "comments": "",
+        "attributes": [
+            {
+                "id": "A08",
+                "entityId": "E02",
+                "name": "start",
+                "dataType": ["int","Range"],
+                "cardinality": "0..1",
+                "iri": "GENO:0000894",
+                "iri-label": "start_position",
+                "cg-label":  "start",
+                "description": ""
+            },
+            {
+                "id": "A09",
+                "entityId": "E02",
+                "name": "end",
+                "dataType": ["int","Range"],
+                "cardinality": "0..1",
+                "iri": "GENO:0000895",
+                "iri-label": "end_position",
+                "cg-label":  "end",
+                "description": ""
+            },
+
+            {
+                "id": "A10",
+                "entityId": "E02",
+                "name": "reference",
+                "dataType": "@id",
+                "cardinality": "0..1",
+                "iri": "FALDO:reference",
+                "iri-label": "reference",
+                "cg-label":  "referenceSequence",
+                "@valueSetId": "SEPIO-CG:65119",
+                "description": ""
+            }
+        ]
+    },
+    "E03": {
+        "id":   "E03",
+        "name": "FunctionalGeneticDosage",
+        "iri":  "GENO:0000923",
+        "comments": "",
+        "attributes": [
+            {
+                "id": "A11",
+                "entityId": "E03",
+                "name": "region",
+                "dataType": "SequenceLocation",
+                "cardinality": "0..1",
+                "iri": "",
+                "iri-label": "",
+                "cg-label":  "region",
+                "description": ""
+            },
+            {
+                "id": "A12",
+                "entityId": "E03",
+                "name": "feature",
+                "dataType": "@id",
+                "cardinality": "0..1",
+                "iri": "GENO:0000445",
+                "iri-label": "is_feature_affected_by",
+                "cg-label":  "feature",
+                "@valueSetId": "DSIVS:0000004",
+                "description": ""
+            },
+            {
+                "id": "A13",
+                "entityId": "E03",
+                "name": "dosage",
+                "dataType": ["int","range"],
+                "cardinality": "1..1",
+                "iri": "GENO:0000917",
+                "iri-label": "has_count",
+                "cg-label":  "dosage",
+                "description": ""
+            }
+        ]
+    },
+    "E04": {
+        "id":   "E04",
+        "name": "GeneticCondition",
+        "iri":  "SEPIO:0000219",
+        "comments": "",
+        "attributes": [
+            {
+            }
+        ]
+    },
+    "E05": {
+        "id":   "E05",
+        "name": "StudyFinding",
+        "iri":  "SEPIO:0000173",
+        "comments": "",
+        "attributes": [
+            {
+                "id": "A14",
+                "entityId": "E05",
+                "name": "source",
+                "dataType": "@id",
+                "cardinality": "1..1",
+                "iri": "IAO:0000115",
+                "iri-label": "source",
+                "cg-label":  "source",
+                "@valueSetId": "DSIVS:0000006",
+                "description": ""
+            },
+            {
+                "id": "A15",
+                "entityId": "E05",
+                "name": "qualifiedContribution",
+                "dataType": "Contribution",
+                "cardinality": "0..*",
+                "iri": "SEPIO:0000388",
+                "iri-label": "has_subject",
+                "cg-label":  "subject",
+                "description": ""
+            },
+            {
+                "id": "A16",
+                "entityId": "E05",
+                "name": "date",
+                "dataType": "dateTime",
+                "cardinatlity": "1..1",
+                "iri":"",
+                "iri-label": "",
+                "cg-label": "",
+                "description": ""
+            }
+        ]
+    },
+    "E06": {
+    "name": "Contribution",
+    "iri": "SEPIO:0000158",
+    "description": "The actions taken by a particular agent in the creation, modification, assessment, or destruction of an artifact.",
+    "attributes": [
+      {
+        "id": "A17",
+        "entityId": "E06",
+        "name": "agent",
+        "dataType": "Agent",
+        "cardinality": "1..1",
+        "iri": "SEPIO:0000017",
+        "iri-label": "has_agent",
+        "cg-label": "agent",
+        "description": "A person, group of people, algorithm, or some other actor that could make a contribution"
+      },
+      {
+        "id": "A18",
+        "entityId": "E06",
+        "name": "contributionDate",
+        "dataType": "Datetime",
+        "cardinality": "0..1",
+        "iri": "SEPIO:0000160",
+        "iri-label": "activity_date",
+        "cg-label": "contributionDate",
+        "description": "The date on which a contribution was completed"
+      },
+      {
+        "id": "A19",
+        "entityId": "E06",
+        "name": "contributionRole",
+        "dataType": "@id",
+        "cardinality": "1..1",
+        "iri": "BFO:0000055",
+        "iri-label": "realizes",
+        "cg-label": "contributionRole",
+        "@valueSetId": "DSIVS:0000007",
+        "description": "The particular role in which an agent was acting while making the contribution"
+      }
+    ]
+  },
+  "E07": {
+    "name": "Agent",
+    "iri": "PROV:agent",
+    "description": "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity (from PROV).",
+    "attributes": [
+    ]
+  },
+  "E08": {
+     "name": "DosageSensitivityEvaluationGuideline",
+     "iri": "",
+     "description": "",
+     "attributes": [
+        {
+            "id": "A21",
+            "entityId": "E08",
+            "name": "version",
+            "dataType": "string",
+            "cardinality": "0..1",
+            "iri": "",
+            "iri-label": "",
+            "cg-label":"version"
+        },
+        {
+            "id": "A22",
+            "entityId": "E08",
+            "name": "url",
+            "dataType": "string",
+            "cardinality": "0..*",
+            "iri": "",
+            "iri-label": "",
+            "cg-label": "url"
+        }
+     ]
+  }
+}
