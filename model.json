@@ -18,7 +18,7 @@
             },
             {
                 "id": "A01",
-                "entityId": "E01",
+                "entityId": "E00",
                 "name": "predicate",
                 "dataType": "@id",
                 "cardinality": "1..1",
@@ -30,7 +30,7 @@
             },
             {
                 "id": "A02",
-                "entityId": "E01",
+                "entityId": "E00",
                 "name": "object",
                 "dataType": "@id",
                 "cardinality": "1..1",
@@ -208,8 +208,6 @@
         "iri":  "SEPIO:0000219",
         "comments": "",
         "attributes": [
-            {
-            }
         ]
     },
     "E05": {
@@ -255,6 +253,7 @@
         ]
     },
     "E06": {
+    "id": "E06",
     "name": "Contribution",
     "iri": "SEPIO:0000158",
     "description": "The actions taken by a particular agent in the creation, modification, assessment, or destruction of an artifact.",
@@ -296,6 +295,7 @@
     ]
   },
   "E07": {
+    "id": "E07",
     "name": "Agent",
     "iri": "PROV:agent",
     "description": "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity (from PROV).",
@@ -303,6 +303,7 @@
     ]
   },
   "E08": {
+     "id": "E08",
      "name": "DosageSensitivityEvaluationGuideline",
      "iri": "",
      "description": "",
